@@ -7,7 +7,14 @@ import axios from 'axios';
 import API_BASE_URL from '../../apiConfig';
 
 const BaseLayout = ({ children }) => {
-    const [lang, setLang] = useState(() => localStorage.getItem('finsight_lang') || 'hi');
+    // Default to 'en' on refresh as requested
+    const [lang, setLang] = useState('en');
+
+    useEffect(() => {
+        // Enforce English on mount/refresh
+        localStorage.setItem('finsight_lang', 'en');
+        window.dispatchEvent(new Event('storage'));
+    }, []);
 
     const handleLangChange = (newLang) => {
         setLang(newLang);

@@ -20,11 +20,11 @@ const Dashboard = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-    const [currentLang, setCurrentLang] = useState(localStorage.getItem('finsight_lang') || 'hi');
+    const [currentLang, setCurrentLang] = useState(localStorage.getItem('finsight_lang') || 'en');
 
     useEffect(() => {
         const handleStorageChange = () => {
-            setCurrentLang(localStorage.getItem('finsight_lang') || 'hi');
+            setCurrentLang(localStorage.getItem('finsight_lang') || 'en');
         };
         window.addEventListener('storage', handleStorageChange);
         return () => window.removeEventListener('storage', handleStorageChange);

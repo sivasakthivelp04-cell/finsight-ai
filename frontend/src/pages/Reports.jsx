@@ -10,7 +10,7 @@ const Reports = () => {
     const [reports, setReports] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedReport, setSelectedReport] = useState(null);
-    const currentLang = localStorage.getItem('finsight_lang') || 'hi';
+    const currentLang = localStorage.getItem('finsight_lang') || 'en';
 
     const t = {
         en: {

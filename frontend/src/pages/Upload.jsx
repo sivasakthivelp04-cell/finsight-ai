@@ -14,7 +14,7 @@ const UploadPage = () => {
     const [error, setError] = useState(null);
     const [progress, setProgress] = useState('');
     const navigate = useNavigate();
-    const currentLang = localStorage.getItem('finsight_lang') || 'hi';
+    const currentLang = localStorage.getItem('finsight_lang') || 'en';
 
     const t = {
         en: {

@@ -18,7 +18,7 @@ const Settings = () => {
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [saved, setSaved] = useState(false);
-    const currentLang = localStorage.getItem('finsight_lang') || 'hi';
+    const currentLang = localStorage.getItem('finsight_lang') || 'en';
 
     const t = {
         en: {

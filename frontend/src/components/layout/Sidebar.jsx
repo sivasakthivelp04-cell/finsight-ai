@@ -11,7 +11,7 @@ const Sidebar = () => {
     const navigate = useNavigate();
     const [company, setCompany] = useState(null);
 
-    const currentLang = localStorage.getItem('finsight_lang') || 'hi';
+    const currentLang = localStorage.getItem('finsight_lang') || 'en';
 
     const t = {
         en: { dashboard: 'Dashboard', upload: 'Upload Data', reports: 'Reports', settings: 'Settings', sub: 'SME Financial Intelligence' },
