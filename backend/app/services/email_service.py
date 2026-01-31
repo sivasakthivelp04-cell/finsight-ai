@@ -23,12 +23,20 @@ class EmailService:
 
             msg.attach(MIMEText(body, 'plain'))
 
-            server = smtplib.SMTP(settings.SMTP_HOST, settings.SMTP_PORT)
-            server.starttls()
+            print(f"Connecting to SMTP: {settings.SMTP_HOST}:{settings.SMTP_PORT} as {settings.SMTP_USERNAME}")
+            
+            if settings.SMTP_PORT == 465:
+                server = smtplib.SMTP_SSL(settings.SMTP_HOST, settings.SMTP_PORT)
+                # No starttls needed for SSL
+            else:
+                server = smtplib.SMTP(settings.SMTP_HOST, settings.SMTP_PORT)
+                server.starttls()
+            
             server.login(settings.SMTP_USERNAME, settings.SMTP_PASSWORD)
             text = msg.as_string()
             server.sendmail(settings.EMAIL_FROM, to_email, text)
             server.quit()
+            print("Email sent successfully")
         except Exception as e:
             print(f"Failed to send email: {e}")
             raise Exception(f"Failed to send email: {e}")
