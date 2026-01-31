@@ -6,7 +6,7 @@ import { UploadCloud, FileText, CheckCircle, AlertCircle, Loader } from 'lucide-
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const API_BASE_URL = `http://${window.location.hostname}:8000/api/v1`;
+import API_BASE_URL from '../apiConfig';
 
 const UploadPage = () => {
     const [status, setStatus] = useState('idle'); // idle, uploading, success, error

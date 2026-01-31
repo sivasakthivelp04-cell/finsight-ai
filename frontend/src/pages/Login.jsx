@@ -30,8 +30,8 @@ const Login = () => {
         const endpoint = isLogin ? '/api/v1/auth/login' : '/api/v1/auth/register';
 
         try {
-            console.log("Attempting auth at:", `http://${window.location.hostname}:8000${endpoint}`);
-            const response = await fetch(`http://${window.location.hostname}:8000${endpoint}`, {
+            console.log("Attempting auth at:", `${API_BASE_URL}/auth/${isLogin ? 'login' : 'register'}`);
+            const response = await fetch(`${API_BASE_URL}/auth/${isLogin ? 'login' : 'register'}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ const Login = () => {
                                 setSuccessMsg('');
                                 setError('');
                                 try {
-                                    const response = await fetch(`http://${window.location.hostname}:8000/api/v1/auth/forgot-password`, {
+                                    const response = await fetch(`${API_BASE_URL}/auth/forgot-password`, {
                                         method: 'POST',
                                         headers: { 'Content-Type': 'application/json' },
                                         body: JSON.stringify({ email: formData.email })

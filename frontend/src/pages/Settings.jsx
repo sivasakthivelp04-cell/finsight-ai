@@ -4,7 +4,7 @@ import BaseLayout from '../components/layout/BaseLayout';
 import { Building2, Mail, Phone, MapPin, FileText, Save, CheckCircle } from 'lucide-react';
 import axios from 'axios';
 
-const API_BASE_URL = `http://${window.location.hostname}:8000/api/v1`;
+import API_BASE_URL from '../apiConfig';
 
 const Settings = () => {
     const [company, setCompany] = useState({
