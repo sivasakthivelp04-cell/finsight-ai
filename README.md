@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FinSight AI - Financial Health Platform for SMEs
 
 FinSight AI is a production-grade SaaS web application that helps Small & Medium Enterprises (SMEs) analyze their financial health using AI-powered insights with **PostgreSQL database storage**.
@@ -288,3 +289,6 @@ python -m uvicorn app.main:app --reload
 
 npm run dev
 
+=======
+# finsight-ai
+>>>>>>> a0f9263951349f04553e39a67eb6024002d6f139
