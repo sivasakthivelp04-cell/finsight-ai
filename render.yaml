@@ -13,6 +13,8 @@ services:
         fromDatabase:
           name: finsight-db
           property: connectionString
+      - key: PYTHON_VERSION
+        value: 3.11.9
       - key: SECRET_KEY
         generateValue: true
       - key: ENVIRONMENT
