@@ -5,16 +5,18 @@ import BaseLayout from '../components/layout/BaseLayout';
 import { UploadCloud, FileText, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useLanguage } from '../context/LanguageContext';
 
 import API_BASE_URL from '../apiConfig';
 
 const UploadPage = () => {
+    const { language } = useLanguage();
     const [status, setStatus] = useState('idle'); // idle, uploading, success, error
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
     const [progress, setProgress] = useState('');
     const navigate = useNavigate();
-    const currentLang = localStorage.getItem('finsight_lang') || 'en';
+    const currentLang = language;
 
     const t = {
         en: {

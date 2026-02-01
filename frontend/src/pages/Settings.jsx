@@ -3,10 +3,12 @@ import React, { useState, useEffect } from 'react';
 import BaseLayout from '../components/layout/BaseLayout';
 import { Building2, Mail, Phone, MapPin, FileText, Save, CheckCircle } from 'lucide-react';
 import axios from 'axios';
+import { useLanguage } from '../context/LanguageContext';
 
 import API_BASE_URL from '../apiConfig';
 
 const Settings = () => {
+    const { language } = useLanguage();
     const [company, setCompany] = useState({
         name: '',
         email: '',
@@ -18,7 +20,7 @@ const Settings = () => {
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [saved, setSaved] = useState(false);
-    const currentLang = localStorage.getItem('finsight_lang') || 'en';
+    const currentLang = language;
 
     const t = {
         en: {

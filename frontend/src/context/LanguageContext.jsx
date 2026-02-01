@@ -11,8 +11,15 @@ export const LanguageProvider = ({ children }) => {
         setLanguage((prev) => {
             const newLang = prev === 'en' ? 'hi' : 'en';
             localStorage.setItem('finsight_lang', newLang);
+            window.dispatchEvent(new Event('storage')); // Notify components still using storage listener
             return newLang;
         });
+    };
+
+    const changeLanguage = (newLang) => {
+        setLanguage(newLang);
+        localStorage.setItem('finsight_lang', newLang);
+        window.dispatchEvent(new Event('storage'));
     };
 
     const t = (key) => {
@@ -21,6 +28,7 @@ export const LanguageProvider = ({ children }) => {
             'dashboard': { en: 'Dashboard', hi: 'डैशबोर्ड' },
             'upload_data': { en: 'Upload Data', hi: 'डेटा अपलोड करें' },
             'reports': { en: 'Reports', hi: 'रिपोर्ट' },
+            'settings': { en: 'Settings', hi: 'सेटिंग्स' },
             'financial_health': { en: 'Financial Health Score', hi: 'वित्तीय स्वास्थ्य स्कोर' },
             'risk_analysis': { en: 'Risk Analysis', hi: 'जोखिम विश्लेषण' },
             'net_profit': { en: 'Net Profit', hi: 'शुद्ध लाभ' },
@@ -35,7 +43,7 @@ export const LanguageProvider = ({ children }) => {
     };
 
     return (
-        <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+        <LanguageContext.Provider value={{ language, toggleLanguage, changeLanguage, t }}>
             {children}
         </LanguageContext.Provider>
     );

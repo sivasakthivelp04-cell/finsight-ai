@@ -4,7 +4,7 @@ import { Globe, Menu } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 
 const BaseLayout = ({ children }) => {
-    const { language, toggleLanguage } = useLanguage();
+    const { language, toggleLanguage, changeLanguage } = useLanguage();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const t = {
@@ -33,13 +33,13 @@ const BaseLayout = ({ children }) => {
                         {/* Language Toggle */}
                         <div className="flex items-center bg-slate-800 p-1 rounded-lg border border-slate-700">
                             <button
-                                onClick={toggleLanguage}
+                                onClick={() => changeLanguage('en')}
                                 className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${language === 'en' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'text-slate-400 hover:text-slate-200'}`}
                             >
                                 ENG
                             </button>
                             <button
-                                onClick={toggleLanguage}
+                                onClick={() => changeLanguage('hi')}
                                 className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${language === 'hi' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'text-slate-400 hover:text-slate-200'}`}
                             >
                                 HIN

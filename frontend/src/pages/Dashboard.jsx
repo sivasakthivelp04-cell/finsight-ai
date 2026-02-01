@@ -12,23 +12,17 @@ import {
 } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useLanguage } from '../context/LanguageContext';
 
 import API_BASE_URL from '../apiConfig';
 
 const Dashboard = () => {
     // SME Financial Intelligence Dashboard
+    const { language } = useLanguage();
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-    const [currentLang, setCurrentLang] = useState(localStorage.getItem('finsight_lang') || 'en');
-
-    useEffect(() => {
-        const handleStorageChange = () => {
-            setCurrentLang(localStorage.getItem('finsight_lang') || 'en');
-        };
-        window.addEventListener('storage', handleStorageChange);
-        return () => window.removeEventListener('storage', handleStorageChange);
-    }, []);
+    const currentLang = language;
 
     const t = {
         en: {
