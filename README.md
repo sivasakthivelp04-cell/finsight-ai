@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # FinSight AI - Financial Health Platform for SMEs
 
 FinSight AI is a production-grade SaaS web application that helps Small & Medium Enterprises (SMEs) analyze their financial health using AI-powered insights with **PostgreSQL database storage**.
@@ -6,7 +5,7 @@ FinSight AI is a production-grade SaaS web application that helps Small & Medium
 ## 🚀 Features
 
 - **Database-Backed Storage**: All financial data and analyses stored in PostgreSQL
-- **Intelligent Data Processing**: Upload CSV/Excel/PDF financial documents
+- **Intelligent Data Processing**: Upload CSV/Excel financial documents
 - **AI-Powered Analysis**: Real financial analysis using OpenAI GPT (with intelligent fallback)
 - **Automatic Column Detection**: Smart parsing of various financial data formats
 - **Financial Health Scoring**: 0-100 score based on profitability, liquidity, and efficiency
@@ -15,6 +14,8 @@ FinSight AI is a production-grade SaaS web application that helps Small & Medium
 - **Reports Management**: View and download historical financial reports
 - **Company Settings**: Manage company details and preferences
 - **Visual Dashboards**: Charts, KPIs, and trend analysis
+- **Multi-language Support**: Toggle between English and Hindi
+- **Secure Authentication**: User registration and login system
 
 ## 📋 Prerequisites
 
@@ -23,10 +24,10 @@ FinSight AI is a production-grade SaaS web application that helps Small & Medium
 - PostgreSQL 12+ (or use SQLite for development)
 - (Optional) OpenAI API key for enhanced AI analysis
 
-## �️ Database Setup
+## 🛠️ Database Setup
 
 ### Option 1: SQLite (Development - Default)
-No setup required! The app will create `finsight.db` automatically.
+No setup required! The app will create `finsight_v2.db` automatically.
 
 ### Option 2: PostgreSQL (Production - Recommended)
 
@@ -43,7 +44,7 @@ No setup required! The app will create `finsight.db` automatically.
    DATABASE_URL=postgresql://finsight_user:your_password@localhost:5432/finsight_db
    ```
 
-## �🔧 Installation
+## 🔧 Installation
 
 ### 1. Backend Setup
 
@@ -81,7 +82,7 @@ npm run dev
 ## 🎯 How to Use
 
 1. **Open the application**: Navigate to `http://localhost:5173`
-2. **Login** (demo mode - any credentials work)
+2. **Register/Login** to access your dashboard
 3. **Configure Company Settings**:
    - Go to "Settings" page
    - Enter your company details (name, email, industry, etc.)
@@ -159,7 +160,7 @@ finsight-ai/
 └── sample_financial_data.csv    # Test data
 ```
 
-## �️ Database Schema
+## 🗄️ Database Schema
 
 ### Tables:
 - **companies**: Company information and settings
@@ -172,52 +173,15 @@ All data is automatically created on first run!
 
 - Financial data stored securely in database
 - PostgreSQL recommended for production
-- HTTPS recommended for production
-- JWT authentication ready (extend as needed)
-
-## 🧪 Testing
-
-Use the provided `sample_financial_data.csv` to test:
-- Revenue: $213,200
-- Expenses: $73,700
-- Net Profit: $139,500
-- Expected Health Score: ~85-90
-
-## 📝 API Endpoints
-
-### Financial
-- `POST /api/v1/financial/upload` - Upload and process file
-- `GET /api/v1/financial/dashboard` - Get latest metrics
-- `GET /api/v1/financial/reports` - List all reports
-- `GET /api/v1/financial/reports/{id}` - Get report detail
-- `GET /api/v1/financial/history` - Upload history
-
-### Company
-- `GET /api/v1/company/` - Get company settings
-- `PUT /api/v1/company/` - Update company settings
-
-## 🌐 Environment Variables
-
-Create `backend/.env`:
-
-```env
-# Database (choose one)
-DATABASE_URL=sqlite:///./finsight.db  # Development
-# DATABASE_URL=postgresql://user:pass@localhost:5432/finsight_db  # Production
-
-# OpenAI (Optional)
-OPENAI_API_KEY=sk-your-key-here
-
-# Security
-SECRET_KEY=your-secret-key-here
-
-# CORS
-BACKEND_CORS_ORIGINS=http://localhost:5173
-```
+- HTTPS enabled in production
+- JWT authentication ready
+- Passwords hashed with bcrypt
+- Environment variables for all secrets
+- CORS protection configured
 
 ## 🚀 Production Deployment
 
-### Quick Deploy (5 Minutes)
+### Quick Deploy
 
 Deploy to **FREE tier** services (Render + Vercel + PostgreSQL):
 
@@ -229,66 +193,18 @@ Deploy to **FREE tier** services (Render + Vercel + PostgreSQL):
 **📚 Deployment Guides:**
 - **Quick Start**: See `QUICK_DEPLOY.md` (5-minute guide)
 - **Comprehensive Guide**: See `DEPLOYMENT.md` (step-by-step)
-- **Summary**: See `DEPLOYMENT_SUMMARY.md` (what's included)
-- **Checklist**: See `DEPLOYMENT_CHECKLIST.md` (track progress)
 
 **🎯 Deployment Stack:**
-- **Frontend**: Vercel (Free - Unlimited deploys, 100GB bandwidth)
+- **Frontend**: Vercel (Free - Unlimited deploys)
 - **Backend**: Render (Free - 750 hours/month)
-- **Database**: Render PostgreSQL (Free - 1GB, 90 days retention)
-- **Email**: Gmail SMTP or SendGrid (Free)
+- **Database**: Render PostgreSQL (Free - 1GB)
 
 **✅ Features:**
 - ✅ HTTPS enabled automatically
-- ✅ Auto-deployment from Git
-- ✅ Environment variable management
-- ✅ Database persistence across redeployments
+- ✅ Database persistence included
 - ✅ CORS configured
-- ✅ Email service ready
-
-**🔐 Security:**
-- ✅ Passwords hashed with bcrypt
-- ✅ No hardcoded credentials
-- ✅ Environment variables for all secrets
-- ✅ CORS protection
-- ✅ SQL injection prevention (SQLAlchemy ORM)
-
+- ✅ Secure logic
 
 ## 📄 License
 
 MIT License - Built for SME Financial Intelligence
-
-## 🆕 What's New
-
-### Database Integration
-- ✅ PostgreSQL/SQLite support
-- ✅ All financial data persisted
-- ✅ Historical reports storage
-- ✅ Company settings management
-
-### Removed Features
-- ❌ Industry Setup page (replaced with Settings)
-- ❌ Hardcoded mock data
-- ❌ SessionStorage dependencies
-
-### New Features
-- ✅ Settings page for company details
-- ✅ Reports page with detailed view
-- ✅ Database-backed dashboard
-- ✅ Persistent data storage
-
-## 🤝 Support
-
-For issues or questions, check the API documentation at `/docs` when the backend is running.
-
-# For running backend
-
-python -m uvicorn app.main:app --reload   
-
-# For running frontend
-
-npm run dev
-
-=======
-# finsight-ai
->>>>>>> a0f9263951349f04553e39a67eb6024002d6f139

@@ -147,40 +147,7 @@ const Login = () => {
                         </div>
                     )}
 
-                    <div className="flex justify-between items-center text-sm">
-                        <span
-                            onClick={async () => {
-                                if (!formData.email) {
-                                    setError('Please enter your email first to reset password');
-                                    return;
-                                }
-                                setLoading(true);
-                                setSuccessMsg('');
-                                setError('');
-                                try {
-                                    const response = await fetch(`${API_BASE_URL}/auth/forgot-password`, {
-                                        method: 'POST',
-                                        headers: { 'Content-Type': 'application/json' },
-                                        body: JSON.stringify({ email: formData.email })
-                                    });
-                                    const data = await response.json();
-                                    if (response.ok) {
-                                        setSuccessMsg(data.message);
-                                        setError('');
-                                    } else {
-                                        setError(data.detail || 'Reset failed');
-                                    }
-                                } catch (err) {
-                                    setError('Connection failed');
-                                } finally {
-                                    setLoading(false);
-                                }
-                            }}
-                            className="text-emerald-400 cursor-pointer hover:underline"
-                        >
-                            Forgot Password?
-                        </span>
-                    </div>
+                    {/* Forgot Password removed as per requirement */}
 
                     <button
                         type="submit"
