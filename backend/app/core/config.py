@@ -42,6 +42,13 @@ class Settings(BaseSettings):
             return v
         return v
 
+    @field_validator("SMTP_HOST", "SMTP_USERNAME", "EMAIL_FROM", mode="before")
+    @classmethod
+    def strip_whitespace(cls, v: str) -> str:
+        if isinstance(v, str):
+            return v.strip()
+        return v
+
     model_config = SettingsConfigDict(
         case_sensitive=True,
         env_file=".env",
