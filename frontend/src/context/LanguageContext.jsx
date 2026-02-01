@@ -3,10 +3,16 @@ import { createContext, useContext, useState } from 'react';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('en'); // 'en' or 'hi'
+    const [language, setLanguage] = useState(() => {
+        return localStorage.getItem('finsight_lang') || 'en';
+    });
 
     const toggleLanguage = () => {
-        setLanguage((prev) => (prev === 'en' ? 'hi' : 'en'));
+        setLanguage((prev) => {
+            const newLang = prev === 'en' ? 'hi' : 'en';
+            localStorage.setItem('finsight_lang', newLang);
+            return newLang;
+        });
     };
 
     const t = (key) => {
