@@ -208,3 +208,7 @@ Deploy to **FREE tier** services (Render + Vercel + PostgreSQL):
 ## 📄 License
 
 MIT License - Built for SME Financial Intelligence
+
+## Explanation Video:
+
+- Link: https://drive.google.com/file/d/18LVQjzdxuFBLMa6_Yy-9TX5lVpD1E-pR/view?usp=sharing
