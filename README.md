@@ -212,3 +212,4 @@ MIT License - Built for SME Financial Intelligence
 ## Explanation Video:
 
 - Link: https://drive.google.com/file/d/18LVQjzdxuFBLMa6_Yy-9TX5lVpD1E-pR/view?usp=sharing
+- ⚠️ If the backend is inactive for 15 minutes, it may take 30–60 seconds to wake up on first login/register. Please wait once — then it works instantly.
