@@ -16,12 +16,13 @@ class EmailService:
             return
 
         try:
-            msg = MIMEMultipart()
-            msg['From'] = settings.EMAIL_FROM
-            msg['To'] = to_email
-            msg['Subject'] = subject
-
-            msg.attach(MIMEText(body, 'plain'))
+            print(f"Resolving SMTP Host: {settings.SMTP_HOST}...")
+            import socket
+            try:
+                ip = socket.gethostbyname(settings.SMTP_HOST)
+                print(f"Resolved {settings.SMTP_HOST} to {ip}")
+            except Exception as e:
+                print(f"DNS Resolution Failed: {e}")
 
             print(f"Connecting to SMTP: {settings.SMTP_HOST}:{settings.SMTP_PORT} as {settings.SMTP_USERNAME}")
             
