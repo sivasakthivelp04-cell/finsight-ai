@@ -1,0 +1,31 @@
+Date,Description,Category,Amount,Type
+2024-01-05,Client A Payment,Sales,15000,Income
+2024-01-08,Office Rent,Rent,-3500,Expense
+2024-01-10,Client B Payment,Sales,22000,Income
+2024-01-12,Inventory Purchase,Inventory,-8000,Expense
+2024-01-15,Freelance Project,Sales,5000,Income
+2024-01-18,Marketing Campaign,Marketing,-2500,Expense
+2024-01-20,Client C Payment,Sales,18000,Income
+2024-01-22,Payroll,Salaries,-12000,Expense
+2024-01-25,Utility Bills,Utilities,-800,Expense
+2024-01-28,Client D Payment,Sales,9500,Income
+2024-02-02,Office Supplies,Supplies,-450,Expense
+2024-02-05,Client E Payment,Sales,13000,Income
+2024-02-08,Software Subscription,Technology,-300,Expense
+2024-02-10,Client F Payment,Sales,7500,Income
+2024-02-12,Inventory Restock,Inventory,-6500,Expense
+2024-02-15,Consulting Fee,Sales,11000,Income
+2024-02-18,Marketing Ads,Marketing,-1800,Expense
+2024-02-20,Client G Payment,Sales,16500,Income
+2024-02-22,Payroll,Salaries,-12000,Expense
+2024-02-25,Equipment Repair,Maintenance,-950,Expense
+2024-02-28,Client H Payment,Sales,8200,Income
+2024-03-01,Office Rent,Rent,-3500,Expense
+2024-03-05,Client I Payment,Sales,14500,Income
+2024-03-08,Travel Expenses,Travel,-1200,Expense
+2024-03-10,Client J Payment,Sales,19000,Income
+2024-03-12,Insurance Premium,Insurance,-2200,Expense
+2024-03-15,Product Sales,Sales,21000,Income
+2024-03-18,Marketing Campaign,Marketing,-3000,Expense
+2024-03-20,Client K Payment,Sales,12500,Income
+2024-03-22,Payroll,Salaries,-12000,Expense

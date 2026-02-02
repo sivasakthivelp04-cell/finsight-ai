@@ -1,0 +1,41 @@
+Date,Description,Category,Amount,Type
+2024-01-01,Product Sales,Sales,12000,Income
+2024-01-02,Service Invoice,Sales,8000,Income
+2024-01-03,Online Order,Sales,6500,Income
+2024-01-04,Wholesale Order,Sales,15000,Income
+2024-01-05,Retail Sale,Sales,9000,Income
+2024-01-06,Office Rent,Rent,-4000,Expense
+2024-01-07,Electricity Bill,Utilities,-1200,Expense
+2024-01-08,Internet Charges,Utilities,-800,Expense
+2024-01-09,Inventory Purchase,Inventory,-7000,Expense
+2024-01-10,Packaging Cost,Packaging,-600,Expense
+2024-01-11,Staff Salary,Salaries,-15000,Expense
+2024-01-12,Marketing Campaign,Marketing,-5000,Expense
+2024-01-13,Logistics Expense,Logistics,-3000,Expense
+2024-01-14,Travel Expense,Travel,-2000,Expense
+2024-01-15,Insurance Premium,Insurance,-1800,Expense
+2024-01-16,Client Payment,Sales,14000,Income
+2024-01-17,Subscription Revenue,Sales,7000,Income
+2024-01-18,Consulting Fee,Sales,6000,Income
+2024-01-19,Export Sales,Sales,16000,Income
+2024-01-20,Local Sales,Sales,10000,Income
+2024-01-21,GST Payment,Tax,-3500,Expense
+2024-01-22,Loan EMI,Loan,-4500,Expense
+2024-01-23,Credit Card Bill,Credit,-2800,Expense
+2024-01-24,Warehouse Rent,Rent,-5000,Expense
+2024-01-25,Raw Material Purchase,Inventory,-9000,Expense
+2024-01-26,Machinery Maintenance,Maintenance,-2500,Expense
+2024-01-27,Fuel Charges,Fuel,-1800,Expense
+2024-01-28,Software Tools,Software,-1200,Expense
+2024-01-29,Training Program,Training,-2200,Expense
+2024-01-30,Legal Fees,Legal,-3000,Expense
+2024-01-31,Client Refund,Refund,-1500,Expense
+2024-02-01,Vendor Payment,Vendor,-6000,Expense
+2024-02-02,Ad Spend,Marketing,-4200,Expense
+2024-02-03,Social Media Marketing,Marketing,-3500,Expense
+2024-02-04,Courier Charges,Logistics,-2000,Expense
+2024-02-05,Equipment Purchase,Assets,-10000,Expense
+2024-02-06,Bonus Payout,Bonus,-4000,Expense
+2024-02-07,Festival Sales,Sales,18000,Income
+2024-02-08,Bulk Order,Sales,22000,Income
+2024-02-09,Online Promotion,Marketing,-3000,Expense

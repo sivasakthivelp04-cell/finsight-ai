@@ -1,0 +1,41 @@
+Date,Description,Category,sum,Type of income
+01-02-2024,Crop Sales - Wheat,Sales,14000,Income
+02-02-2024,Crop Sales - Rice,Sales,16000,Income
+03-02-2024,Vegetable Market Sale,Sales,9000,Income
+04-02-2024,Fruit Wholesale,Sales,18000,Income
+05-02-2024,Organic Produce Sale,Sales,12000,Income
+06-02-2024,Fertilizer Purchase,Fertilizer,-5000,Expense
+07-02-2024,Seed Purchase,Seeds,-3500,Expense
+08-02-2024,Pesticides,Pesticides,-2800,Expense
+09-02-2024,Tractor Fuel,Fuel,-2200,Expense
+10-02-2024,Farm Labor Wages,Salaries,-12000,Expense
+11-02-2024,Irrigation Cost,Utilities,-1800,Expense
+12-02-2024,Equipment Maintenance,Maintenance,-2400,Expense
+13-02-2024,Cold Storage Rent,Rent,-4500,Expense
+14-02-2024,Packaging Materials,Packaging,-1500,Expense
+15-02-2024,Transport to Market,Logistics,-3200,Expense
+16-02-2024,Bulk Crop Sale,Sales,20000,Income
+17-02-2024,Export Produce Sale,Sales,25000,Income
+18-02-2024,Retail Stall Sales,Sales,11000,Income
+19-02-2024,Farmer Market Income,Sales,13000,Income
+20-02-2024,Agri Contract Payment,Sales,17000,Income
+21-02-2024,GST Payment,Tax,-4000,Expense
+22-02-2024,Loan EMI,Loan,-6000,Expense
+23-02-2024,Crop Insurance Premium,Insurance,-2200,Expense
+24-02-2024,Warehouse Rent,Rent,-5000,Expense
+25-02-2024,Animal Feed Purchase,Inventory,-8000,Expense
+26-02-2024,Veterinary Services,Services,-2600,Expense
+27-02-2024,Water Charges,Utilities,-1700,Expense
+28-02-2024,Software Tools,Software,-1200,Expense
+29-02-2024,Training Program,Training,-2300,Expense
+01-03-2024,Legal Fees,Legal,-3000,Expense
+02-03-2024,Crop Loss Adjustment,Loss,-3500,Expense
+03-03-2024,Vendor Payment,Vendor,-7000,Expense
+04-03-2024,Ad Spend,Marketing,-3800,Expense
+05-03-2024,Social Media Marketing,Marketing,-3000,Expense
+06-03-2024,Courier Charges,Logistics,-2200,Expense
+07-03-2024,Greenhouse Setup,Assets,-15000,Expense
+08-03-2024,Bonus Payout,Bonus,-5000,Expense
+09-03-2024,Seasonal Harvest Sales,Sales,30000,Income
+10-03-2024,Bulk Grain Order,Sales,28000,Income
+11-03-2024,Online Produce Sale,Sales,16000,Income

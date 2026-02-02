@@ -1,0 +1,9 @@
+txn_date,particulars,amount,dr_cr
+2024-01-01,IMPS: Transfer from Client A,50000,credit
+2024-01-05,Rent Payment - Jan 24,15000,debit
+2024-01-10,AWS Cloud Services Bill,2400,debit
+2024-01-15,NEFT: Settlement from Zomato/Swiggy,85000,credit
+2024-01-18,Salary Disbursement - Staff,45000,debit
+2024-01-20,Electricity & Water Bill,3500,debit
+2024-01-25,Investment Interest Received,1200,credit
+2024-01-28,Vendor Payment: Logistics Co.,12000,debit
