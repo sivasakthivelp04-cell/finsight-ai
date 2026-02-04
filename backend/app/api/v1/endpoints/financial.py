@@ -190,9 +190,15 @@ async def get_dashboard(
     latest_report = db.query(Report).filter(Report.company_id == id, Report.upload_id == latest.id).first()
     report_id = latest_report.id if latest_report else None
 
+    # Re-extract generic metadata if not present or specifically requested
+    # For simplicity, we just return what's in the latest report or re-process
+    latest_report = db.query(Report).filter(Report.company_id == id, Report.upload_id == latest.id).first()
+    report_content = json.loads(encryption_service.decrypt(latest_report.encrypted_content)) if latest_report else {}
+    generic_metadata = report_content.get('financial_data', {}).get('generic_metadata', {})
+
     return {
         "has_data": True,
-        "report_id": report_id,
+        "report_id": latest_report.id if latest_report else None,
         "financial_data": {
             "total_revenue": latest.total_revenue,
             "total_expenses": latest.total_expenses,
@@ -205,7 +211,8 @@ async def get_dashboard(
             "total_debt": latest.total_debt,
             "categories": json.loads(encryption_service.decrypt(latest.encrypted_categories)) if latest.encrypted_categories else {},
             "top_expenses": json.loads(encryption_service.decrypt(latest.encrypted_top_expenses)) if latest.encrypted_top_expenses else [],
-            "monthly_breakdown": json.loads(encryption_service.decrypt(latest.encrypted_monthly_breakdown)) if latest.encrypted_monthly_breakdown else []
+            "monthly_breakdown": json.loads(encryption_service.decrypt(latest.encrypted_monthly_breakdown)) if latest.encrypted_monthly_breakdown else [],
+            "generic_metadata": generic_metadata
         },
         "ai_analysis": {
             "health_score": latest.health_score,

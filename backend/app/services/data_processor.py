@@ -16,12 +16,19 @@ class DataProcessor:
                 df = pd.read_csv(io.BytesIO(file_content))
             elif filename.endswith(('.xlsx', '.xls')):
                 df = pd.read_excel(io.BytesIO(file_content))
-
             else:
                 raise ValueError("Unsupported file format. Please upload CSV or XLSX")
 
-            # Analyze the dataframe structure
-            return DataProcessor._analyze_dataframe(df, filename)
+            # Detect if it's financial or generic
+            # For now, let's provide BOTH financial analysis AND generic metadata
+            # if the file looks like it has finance columns
+            
+            financial_summary = DataProcessor._analyze_dataframe(df.copy(), filename)
+            generic_metadata = DataProcessor._analyze_generic_dataset(df)
+            
+            # Merge or return both
+            financial_summary['generic_metadata'] = generic_metadata
+            return financial_summary
 
         except Exception as e:
             return {"error": str(e)}
@@ -199,6 +206,75 @@ class DataProcessor:
             return final_df, None
         except Exception as e:
             return None, f"Mapping Error: {str(e)}"
+
+    @staticmethod
+    def _analyze_generic_dataset(df: pd.DataFrame) -> Dict[str, Any]:
+        """
+        Extract generic metadata from any dataframe for Visualytics dashboard.
+        """
+        cols = df.columns.tolist()
+        numeric_cols = df.select_dtypes(include=['number']).columns.tolist()
+        text_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
+        date_cols = df.select_dtypes(include=['datetime', 'datetimetz']).columns.tolist()
+        
+        # Also check if text columns could be dates
+        potential_dates = []
+        for col in text_cols:
+            try:
+                # Sample 10 rows to check if it's a date
+                sample = df[col].dropna().head(10)
+                if not sample.empty and pd.to_datetime(sample, errors='coerce').notnull().all():
+                    potential_dates.append(col)
+            except:
+                pass
+        
+        # Move potential dates from text to dates
+        for col in potential_dates:
+            if col in text_cols:
+                text_cols.remove(col)
+                date_cols.append(col)
+
+        column_info = {
+            "total_columns": len(cols),
+            "numeric_count": len(numeric_cols),
+            "text_count": len(text_cols),
+            "date_count": len(date_cols),
+            "columns": cols,
+            "numeric_columns": numeric_cols,
+            "text_columns": text_cols,
+            "date_columns": date_cols
+        }
+
+        # Summary statistics for numeric columns
+        stats = {}
+        for col in numeric_cols:
+            stats[col] = {
+                "min": float(df[col].min()) if not df[col].empty else 0,
+                "max": float(df[col].max()) if not df[col].empty else 0,
+                "mean": float(df[col].mean()) if not df[col].empty else 0
+            }
+
+        # Sample data (first 100 rows for the table view)
+        sample_data = df.head(100).fillna('').to_dict(orient='records')
+
+        # Correlation matrix for numeric columns
+        correlation = []
+        if len(numeric_cols) > 1:
+            corr_matrix = df[numeric_cols].corr().fillna(0)
+            for i, row_col in enumerate(numeric_cols):
+                for j, col_col in enumerate(numeric_cols):
+                    correlation.append({
+                        "x": row_col,
+                        "y": col_col,
+                        "value": float(corr_matrix.iloc[i, j])
+                    })
+
+        return {
+            "column_info": column_info,
+            "stats": stats,
+            "sample_data": sample_data,
+            "correlation": correlation
+        }
 
     @staticmethod
     def _find_column(df: pd.DataFrame, possible_names: List[str]) -> str:
